@@ -8,15 +8,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Mini Rally - Registro de Evento</h1>
-          <p className="text-lg text-gray-600">Completa tu información para participar en la emoción del rally</p>
-        </div>
-
-        <div className="max-w-2xl mx-auto mb-8">
-          <RegistroForm />
-        </div>
-
         {/* Imagen del evento */}
         <div className="max-w-4xl mx-auto mb-8">
           <div className="relative w-full h-auto rounded-lg overflow-hidden shadow-2xl">
@@ -30,6 +21,15 @@ export default function HomePage() {
             />
           </div>
         </div>
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Mini Rally - Registro de Evento</h1>
+          <p className="text-lg text-gray-600">Completa tu información para participar en la emoción del rally</p>
+        </div>
+
+        <div className="max-w-2xl mx-auto mb-8">
+          <RegistroForm />
+        </div>
+
 
         {/* Información adicional del evento */}
         <div className="max-w-2xl mx-auto mb-8 bg-white rounded-lg shadow-lg p-6">
