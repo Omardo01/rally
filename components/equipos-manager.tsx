@@ -336,6 +336,37 @@ export function EquiposManager() {
     )
   }
 
+  // Función para obtener las clases de color de fondo tenue
+  const getTeamBackgroundClass = (color: string) => {
+    const backgroundClasses = {
+      red: "bg-red-50 border-red-200",
+      blue: "bg-blue-50 border-blue-200",
+      green: "bg-green-50 border-green-200",
+      yellow: "bg-yellow-50 border-yellow-200",
+      purple: "bg-purple-50 border-purple-200",
+      pink: "bg-pink-50 border-pink-200",
+      orange: "bg-orange-50 border-orange-200",
+      teal: "bg-teal-50 border-teal-200",
+      gray: "bg-gray-50 border-gray-200",
+    }
+    return backgroundClasses[color as keyof typeof backgroundClasses] || "bg-gray-50 border-gray-200"
+  }
+
+  const getTeamMemberBackgroundClass = (color: string) => {
+    const memberBackgroundClasses = {
+      red: "bg-red-100",
+      blue: "bg-blue-100",
+      green: "bg-green-100",
+      yellow: "bg-yellow-100",
+      purple: "bg-purple-100",
+      pink: "bg-pink-100",
+      orange: "bg-orange-100",
+      teal: "bg-teal-100",
+      gray: "bg-gray-100",
+    }
+    return memberBackgroundClasses[color as keyof typeof memberBackgroundClasses] || "bg-gray-100"
+  }
+
   return (
     <div className="space-y-6 sm:space-y-8">
       {/* Botón de actualizar */}
@@ -515,7 +546,7 @@ export function EquiposManager() {
             {equipos.map((equipo) => {
               const miembros = getParticipantesPorEquipo(equipo.id)
               return (
-                <Card key={equipo.id} className="bg-white border-gray-200">
+                <Card key={equipo.id} className={getTeamBackgroundClass(equipo.color)}>
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -553,7 +584,7 @@ export function EquiposManager() {
                           {miembros.map((miembro) => (
                             <div
                               key={miembro.id}
-                              className="flex flex-col sm:flex-row sm:items-center justify-between text-sm bg-gray-50 p-3 rounded gap-2"
+                              className={`flex flex-col sm:flex-row sm:items-center justify-between text-sm p-3 rounded gap-2 ${getTeamMemberBackgroundClass(equipo.color)}`}
                             >
                               <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
                                 <span className="text-gray-900 font-medium">{miembro.nombre}</span>
