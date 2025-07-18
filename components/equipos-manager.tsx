@@ -32,12 +32,10 @@ import { EditEquipoModal } from "@/components/edit-equipo-modal"
 const coloresDisponibles = [
   { value: "red", label: "Rojo", class: "bg-red-500" },
   { value: "blue", label: "Azul", class: "bg-blue-500" },
-  { value: "green", label: "Verde", class: "bg-green-500" },
   { value: "yellow", label: "Amarillo", class: "bg-yellow-500" },
   { value: "purple", label: "Morado", class: "bg-purple-500" },
-  { value: "pink", label: "Rosa", class: "bg-pink-500" },
-  { value: "orange", label: "Naranja", class: "bg-orange-500" },
   { value: "teal", label: "Verde Azulado", class: "bg-teal-500" },
+  { value: "gray", label: "Gris", class: "bg-gray-500" },
 ]
 
 export function EquiposManager() {
