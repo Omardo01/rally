@@ -97,15 +97,18 @@ export function RegistroForm() {
 
   if (isSuccess) {
     return (
-      <Card className="w-full max-w-lg mx-auto">
+      <Card className="w-full max-w-lg mx-auto bg-white border-gray-200 shadow-lg">
         <CardContent className="pt-6">
           <div className="text-center space-y-4">
-            <CheckCircle className="w-16 h-16 text-green-500 mx-auto" />
-            <h3 className="text-2xl font-bold text-green-700">¡Registro Completado!</h3>
-            <p className="text-gray-600">
+            <CheckCircle className="w-12 sm:w-16 h-12 sm:h-16 text-green-500 mx-auto" />
+            <h3 className="text-xl sm:text-2xl font-bold text-green-700">¡Registro Completado!</h3>
+            <p className="text-gray-600 text-sm sm:text-base px-4">
               Tu información ha sido registrada exitosamente. Pronto recibirás más detalles sobre el evento.
             </p>
-            <Button onClick={() => setIsSuccess(false)} className="mt-4">
+            <Button
+              onClick={() => setIsSuccess(false)}
+              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
+            >
               Registrar Otra Persona
             </Button>
           </div>
@@ -115,15 +118,19 @@ export function RegistroForm() {
   }
 
   return (
-    <Card className="w-full max-w-lg mx-auto">
-      <CardHeader>
-        <CardTitle>Información del Participante</CardTitle>
-        <CardDescription>Completa todos los campos para completar tu registro</CardDescription>
+    <Card className="w-full max-w-lg mx-auto bg-white border-gray-200 shadow-lg">
+      <CardHeader className="text-center sm:text-left">
+        <CardTitle className="text-gray-900 text-lg sm:text-xl">Información del Participante</CardTitle>
+        <CardDescription className="text-gray-600">
+          Completa todos los campos para completar tu registro
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="nombre">Nombre Completo *</Label>
+            <Label htmlFor="nombre" className="text-gray-700 font-medium">
+              Nombre Completo *
+            </Label>
             <Input
               id="nombre"
               type="text"
@@ -132,11 +139,14 @@ export function RegistroForm() {
               onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
               required
               disabled={isSubmitting}
+              className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="telefono">Número Telefónico *</Label>
+            <Label htmlFor="telefono" className="text-gray-700 font-medium">
+              Número Telefónico *
+            </Label>
             <Input
               id="telefono"
               type="tel"
@@ -145,11 +155,14 @@ export function RegistroForm() {
               onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
               required
               disabled={isSubmitting}
+              className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="edad">Edad *</Label>
+            <Label htmlFor="edad" className="text-gray-700 font-medium">
+              Edad *
+            </Label>
             <Input
               id="edad"
               type="number"
@@ -160,22 +173,29 @@ export function RegistroForm() {
               onChange={(e) => setFormData({ ...formData, edad: e.target.value })}
               required
               disabled={isSubmitting}
+              className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="alergias">Alergias o Enfermedades a Considerar</Label>
+            <Label htmlFor="alergias" className="text-gray-700 font-medium">
+              Alergias o Enfermedades a Considerar
+            </Label>
             <Textarea
               id="alergias"
               placeholder="Describe cualquier alergia, enfermedad o condición médica que debamos considerar (opcional)"
-              className="min-h-[100px]"
+              className="min-h-[80px] sm:min-h-[100px] border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white resize-none"
               value={formData.alergias}
               onChange={(e) => setFormData({ ...formData, alergias: e.target.value })}
               disabled={isSubmitting}
             />
           </div>
 
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />

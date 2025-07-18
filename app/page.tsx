@@ -6,10 +6,10 @@ import Image from "next/image"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4 sm:py-8">
       <div className="container mx-auto px-4">
-        {/* Imagen del evento */}
-        <div className="max-w-4xl mx-auto mb-8">
+        {/* Imagen del evento - Responsiva */}
+        <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
           <div className="relative w-full h-auto rounded-lg overflow-hidden shadow-2xl">
             <Image
               src="/images/rally.jpg"
@@ -21,46 +21,50 @@ export default function HomePage() {
             />
           </div>
         </div>
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Mini Rally - Registro de Evento</h1>
-          <p className="text-lg text-gray-600">Completa tu información para participar en la emoción del rally</p>
+
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            Mini Rally - Registro de Evento
+          </h1>
+          <p className="text-base sm:text-lg text-gray-600 px-4">
+            Completa tu información para participar en la emoción del rally
+          </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-8">
+        <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
           <RegistroForm />
         </div>
 
-
-        {/* Información adicional del evento */}
-        <div className="max-w-2xl mx-auto mb-8 bg-white rounded-lg shadow-lg p-6">
+        {/* Información adicional del evento - Mejorada para móvil */}
+        <div className="max-w-2xl mx-auto mb-6 sm:mb-8 bg-white rounded-lg shadow-lg p-4 sm:p-6">
           <div className="text-center space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900">Detalles del Evento</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Detalles del Evento</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+              <div className="flex flex-col items-center p-3 sm:p-4 bg-yellow-50 rounded-lg">
                 <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold">⏰</span>
+                  <span className="text-white font-bold text-sm">⏰</span>
                 </div>
-                <p className="font-semibold">Horario</p>
-                <p className="text-gray-600">12:00 PM - 6:30 PM</p>
+                <p className="font-semibold text-gray-900">Horario</p>
+                <p className="text-gray-600 text-center">12:00 PM - 6:30 PM</p>
               </div>
-              <div className="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+              <div className="flex flex-col items-center p-3 sm:p-4 bg-yellow-50 rounded-lg">
                 <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold">📅</span>
+                  <span className="text-white font-bold text-sm">📅</span>
                 </div>
-                <p className="font-semibold">Fecha</p>
-                <p className="text-gray-600">26 de Julio 2025</p>
+                <p className="font-semibold text-gray-900">Fecha</p>
+                <p className="text-gray-600 text-center">26 de Julio 2025</p>
               </div>
-              <div className="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+              <div className="flex flex-col items-center p-3 sm:p-4 bg-yellow-50 rounded-lg">
                 <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold">📍</span>
+                  <span className="text-white font-bold text-sm">📍</span>
                 </div>
-                <p className="font-semibold">Ubicación</p>
-                <p className="text-gray-600">Quinta America</p>
+                <p className="font-semibold text-gray-900">Ubicación</p>
+                <p className="text-gray-600 text-center">Quinta America</p>
               </div>
             </div>
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
-              <p className="text-red-800 font-semibold">⚠️ Información Importante</p>
-              <ul className="text-red-700 text-sm mt-2 space-y-1">
+              <p className="text-red-800 font-semibold text-sm sm:text-base">⚠️ Información Importante</p>
+              <ul className="text-red-700 text-sm mt-2 space-y-1 text-left">
                 <li>• Acceso limitado - Solo con pulsera</li>
                 <li>• Costo de pulsera: $50</li>
                 <li>• A partir de 12 años</li>
@@ -72,12 +76,12 @@ export default function HomePage() {
 
         <div className="text-center">
           <Link href="/admin">
-            <Button variant="outline" className="bg-white text-gray-700">
+            <Button variant="outline" className="bg-white text-gray-700 hover:bg-gray-50">
               <Lock className="w-4 h-4 mr-2" />
               Panel de Administración
             </Button>
           </Link>
-          <p className="text-sm text-gray-500 mt-2">Acceso restringido - Se requieren credenciales</p>
+          <p className="text-sm text-gray-500 mt-2 px-4">Acceso restringido - Se requieren credenciales</p>
         </div>
       </div>
     </div>

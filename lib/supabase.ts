@@ -14,6 +14,7 @@ export interface Participante {
   alergias: string | null
   fecha_registro: string
   equipo_id: string | null
+  pagado: boolean
 }
 
 export interface Equipo {
